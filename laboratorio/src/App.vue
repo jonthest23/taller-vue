@@ -1,25 +1,37 @@
-<script>
-import Formulario from './components/formulario.vue';
-import Item from './components/Item.vue';
-import { ref } from 'vue';
-export default {
-  components: {
-    Formulario,
-    Item,
-  },  
-  methods: {
-    agregarDatoATabla(nuevoDato) {
-      this.$refs.Item.$emit('nuevo-dato', nuevoDato);
-    },
+<script lang="ts">
+
+import formulario from './components/formulario.vue';
+import tabla from './components/tabla.vue';
+import { defineComponent } from 'vue';
+
+
+
+export default defineComponent({
+  data() {
+    return {
+      datos: [{}],
+    };
   },
-};
+  components: {
+    formulario,
+    tabla
+  },
+  methods: {
+    agregarDatoATabla(nuevoDato: object) {
+      try {
+        this.datos.push(nuevoDato);
+      } catch (error) {
+        alert('Error al agregar el dato');
+        console.log(error);
+      }
+  }
+  },
+})
 </script>
 
 <template>
-  <div>
-    <formulario @nuevo-dato="agregarDatoATabla" />
-    <Item />
-  </div>
+    <formulario @nuevo-dato="agregarDatoATabla"/>
+    <tabla :datos="datos" />
 </template>
 
 
