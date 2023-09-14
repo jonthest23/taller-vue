@@ -1,5 +1,6 @@
 <template>
   <form @submit.prevent="agregarDato">
+    <label>Ingrese los datos</label>
     <input type="number" placeholder="id" v-model="id" />
     <input type="text" placeholder="articulo" v-model="articulo" />
     <input placeholder="cantidad" v-model="cantidad" />
@@ -56,3 +57,33 @@ export default defineComponent({
 
 )
 </script>
+<style scoped>
+
+form {
+  display: flex;
+  height: fit-content;
+  background-color: rgb(255, 255 , 255, 0.5);
+  flex-direction: column;
+  margin: 15px;
+  margin-top: 0px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+form input {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+form button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: rgb(255, 255 , 255, 0.5);
+}
+
+</style>

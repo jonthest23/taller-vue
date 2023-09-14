@@ -21,19 +21,16 @@ a,
 
 @media (min-width: 1024px) {
   body {
+    padding: 20px;
+    padding-top: 40px;
     display: flex;
-    place-items: center;
     width: 100vw;
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 40% 60%;
+    display: flex;
+    
     padding: 0 2rem;
     width: 100%;
   }
-}
-.item {
-  display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20% ;
 }
