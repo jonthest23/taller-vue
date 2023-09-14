@@ -7,6 +7,14 @@ export default defineComponent({
         datos: {
             type: Array<object>,
             required: true,
+        },
+        total : {
+            type: Number,
+            required: true,
+        },
+        descuento : {
+            type: String,
+            required: false,
         }
     },
     components: {
@@ -21,11 +29,15 @@ export default defineComponent({
         <p>id</p>
         <p>articulo</p>
         <p>cantidad</p>
-        <p>valor</p>
+        <p>valor unitario</p>
         <p>total</p>
     </div>
     <div v-for="datosItem in datos" class="item">
         <Item :datosItem="datosItem" />
+    </div>
+    <div>
+        <p>Total</p>
+        <p>{{total}}  ({{ descuento }})</p>
     </div>
 </div>
 </template>

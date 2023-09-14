@@ -20,7 +20,7 @@ export default defineComponent( {
         <p>{{datosItem.id}}</p>
         <p>{{datosItem.articulo}}</p>
         <p>{{datosItem.cantidad}}</p>
-        <p>{{datosItem.valor}}</p>
+        <p>{{datosItem.vu}}</p>
         <p>{{datosItem.total}}</p>
 </template>
 
